@@ -1,7 +1,7 @@
 # MM-Dia
 This is the official repository of the ICLR 2026 paper "From Natural Alignment to Conditional Controllability in Multimodal Dialogue".
 
-For details of the dataset and Multimodal Dialogue Generation tasks, please refer to our [Paper](https://cloud.tsinghua.edu.cn/f/01f98fa0f9c34983887b/?dl=1) and [Demo Page](https://mmdiaiclr26.github.io/mmdiaiclr26/)
+For details of the dataset and Multimodal Dialogue Generation tasks, please refer to our [Paper](https://cloud.tsinghua.edu.cn/f/01f98fa0f9c34983887b/?dl=1) and [Demo Page](https://mmdiaiclr26.github.io/mmdiaiclr26)
 
 ## To be released:
 
