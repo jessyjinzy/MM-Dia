@@ -1,15 +1,8 @@
 # MM-DIA: A Large-Scale Expressive Multimodal Dialogue Dataset
 
-<p align="center">
-  <a href="https://mmdiaiclr26.github.io/mmdiaiclr26/">[Demo Page]</a> &nbsp;|&nbsp;
-  <a href="https://github.com/jessyjinzy/MM-Dia">[GitHub]</a> &nbsp;|&nbsp;
-  <a href="#">[Paper (ICLR 2026)]</a> &nbsp;|&nbsp;
-  <a href="#">[HuggingFace Dataset]</a>
-</p>
+This is the official repository of the ICLR 2026 paper "From Natural Alignment to Conditional Controllability in Multimodal Dialogue".
 
-> **From Natural Alignment to Conditional Controllability in Multimodal Dialogue**  
-> Zeyu Jin, Songtao Zhou, Haoyu Wang, Minghao Tian, Kaifeng Yun, Zhuo Chen, Xiaoyu Qin, Jia Jia  
-> *Published at ICLR 2026*
+For details of the dataset and Multimodal Dialogue Generation tasks, please refer to our [Paper](https://cloud.tsinghua.edu.cn/f/01f98fa0f9c34983887b/?dl=1) and [Demo Page](https://mmdiaiclr26.github.io/mmdiaiclr26)
 
 ---
 
@@ -487,19 +480,3 @@ The MM-DIA dataset is released under a custom research-only license — see [MM-
 
 ---
 
-## 📖 Documentation Guide
-
-| Document | Purpose | When to Read |
-|----------|---------|-------------|
-| **[QUICKSTART.md](QUICKSTART.md)** | 5-minute setup guide | Want to get started immediately |
-| **[README.md](README.md)** | Complete reference | Need full workflow documentation |
-| **[DATASET_RELEASE.md](DATASET_RELEASE.md)** | Copyright & reconstruction | Understanding release strategy and video extraction |
-
----
-
-## 📞 Support
-
-- **GitHub Issues**: https://github.com/jessyjinzy/MM-Dia/issues
-- **Email**: jinzeyu23@mails.tsinghua.edu.cn
-- **Demo Page**: https://mmdiaiclr26.github.io/mmdiaiclr26/
-- **Paper**: [ICLR 2026] (link TBD)
