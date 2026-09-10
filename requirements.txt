@@ -1,0 +1,29 @@
+accelerate
+datasets
+descript-audio-codec
+torch==2.5.1
+torchaudio==2.5.1
+transformers>=4.45.1,<4.47.0
+librosa
+dacite
+boto3==1.35.36
+s3fs
+json_repair
+pandas
+pydantic
+vector_quantize_pytorch
+loguru
+pydub
+ruff==0.12.2
+omegaconf
+click
+srt
+# Gradio demo
+gradio>=4.0.0
+
+# Evaluation dependencies
+jiwer
+scikit-learn
+
+# Optional but recommended
+ffmpeg-python
