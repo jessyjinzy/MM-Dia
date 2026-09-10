@@ -51,7 +51,7 @@ python av_align_and_extract.py \
 |--------|-------|
 | **Total duration** | 360+ hours |
 | **Dialogue clips** | 54,700 |
-| **Source films** | ~100 movies + TV episodes |
+| **Source films** | ~200 movies + 9 TV episodes |
 | **Languages** | English (primary) |
 | **Sample rate** | 24kHz / 44.1kHz |
 | **Avg clip duration** | 15-30 seconds |
