@@ -18,7 +18,7 @@ MM-DIA-BENCH (309 highly expressive dual-speaker dialogues) provides a rigorous 
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 Get started in 3 steps (~2 hours):
 
@@ -45,7 +45,7 @@ python av_align_and_extract.py \
 
 ---
 
-## 📊 Dataset Statistics
+## Dataset Statistics
 
 | Metric | Value |
 |--------|-------|
@@ -117,7 +117,7 @@ python av_align_and_extract.py \
 
 ---
 
-## ⚠️ Copyright Notice & Dataset Release Strategy
+## Copyright Notice & Dataset Release Strategy
 
 **Due to copyright restrictions, we do NOT release original video files.**
 
@@ -127,8 +127,8 @@ python av_align_and_extract.py \
 - ❌ **Video files** (NOT included - users must provide their own sources)
 
 ### What Users Need to Do:
-1. **Obtain legal copies** of source movies/TV episodes
-2. **Decode audio** from released DAC files to WAV (using `audio_codec_utils.py`)
+1. **Decode audio** from released DAC files to WAV (using `audio_codec_utils.py`)
+2. **Obtain legal copies** of source movies/TV episodes
 3. **Extract video clips** from your sources using audio fingerprinting (using `av_align_and_extract.py`)
 
 See [DATASET_RELEASE.md](DATASET_RELEASE.md) for detailed instructions on:
@@ -158,6 +158,29 @@ See [DATASET_RELEASE.md](DATASET_RELEASE.md) for detailed instructions on:
 - Decode audio: ~30 min per batch (GPU) or ~2 hours (CPU)
 - Extract video: ~10-30 min per film (depends on length and search window)
 - MM-DIA-BENCH: Ready to use, no extraction needed
+
+---
+
+## Request Access to Dataset
+
+**The MM-DIA dataset is now publicly available on HuggingFace.**
+
+Since we do not own the copyright of the original video files, for researchers and educators who wish to use the dataset for **non-commercial research and/or educational purposes**, we provide access to the released annotations and encoded audio files under certain conditions and terms.
+
+### How to Request Access:
+
+1. **Download the EULA form**: [MM-DIA_EULA.pdf](MM-DIA_EULA.pdf)
+2. **Fill out and sign** the EULA form
+3. **Send the scanned form** to: **jinzeyu23@mails.tsinghua.edu.cn**
+4. **Wait for approval**: Once approved, you will receive a download link to access the HuggingFace repository
+
+**Important Notes:**
+- The dataset is intended for **non-commercial research and educational use only**
+- By requesting access, you agree to comply with all terms specified in the EULA
+- You must obtain legal copies of source movies/TV episodes for video reconstruction
+- Please allow 3-5 business days for approval processing
+
+For questions about the dataset or access approval, please contact: jinzeyu23@mails.tsinghua.edu.cn
 
 ---
 
@@ -236,7 +259,7 @@ Each `.json` file contains a list of dialogue clips. Key fields per clip:
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **Python**: 3.10+
 - **PyTorch**: 2.5.1+ with CUDA 11.8+
