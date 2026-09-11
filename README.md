@@ -1,20 +1,15 @@
 This is the official repository for the ICLR 2026 paper **“From Natural Alignment to Conditional Controllability in Multimodal Dialogue.”**
 
 <p align="center">
-  <a href="https://cloud.tsinghua.edu.cn/f/01f98fa0f9c34983887b/?dl=1">
-    <img src="https://img.shields.io/badge/Paper-ICLR%202026-B31B1B" alt="Paper">
+  <a href="https://cloud.tsinghua.edu.cn/f/01f98fa0f9c34983887b/?dl=1"><img src="https://img.shields.io/badge/Paper-ICLR%202026-B31B1B" alt="Paper">
   </a>
-  <a href="https://huggingface.co/datasets/jessyjin/MM-Dia">
-    <img src="https://img.shields.io/badge/🤗%20Dataset-MM--Dia-FFD21E" alt="MM-Dia Dataset">
+  <a href="https://huggingface.co/datasets/jessyjin/MM-Dia"><img src="https://img.shields.io/badge/🤗%20Dataset-MM--Dia-FFD21E" alt="MM-Dia Dataset">
   </a>
-  <a href="https://huggingface.co/datasets/jessyjin/MM-Dia-Bench">
-    <img src="https://img.shields.io/badge/🤗%20Benchmark-MM--Dia--Bench-FFD21E" alt="MM-Dia-Bench">
+  <a href="https://huggingface.co/datasets/jessyjin/MM-Dia-Bench"><img src="https://img.shields.io/badge/🤗%20Benchmark-MM--Dia--Bench-FFD21E" alt="MM-Dia-Bench">
   </a>
-  <a href="https://mmdiaiclr26.github.io/mmdiaiclr26/">
-    <img src="https://img.shields.io/badge/🌐%20Project-Page-1686C8" alt="Project Page">
+  <a href="https://mmdiaiclr26.github.io/mmdiaiclr26/"><img src="https://img.shields.io/badge/🌐%20Project-Page-1686C8" alt="Project Page">
   </a>
-  <a href="https://github.com/jessyjinzy/MM-Dia/blob/main/MM-DIA_EULA.pdf">
-    <img src="https://img.shields.io/badge/License-MM--Dia%20EULA-4C9A2A" alt="MM-Dia EULA">
+  <a href="https://github.com/jessyjinzy/MM-Dia/blob/main/MM-DIA_EULA.pdf"><img src="https://img.shields.io/badge/License-MM--Dia%20EULA-4C9A2A" alt="MM-Dia EULA">
   </a>
 </p>
 
