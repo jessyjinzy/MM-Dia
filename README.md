@@ -33,23 +33,14 @@ MM-DIA supports three multimodal dialogue generation tasks:
 
 **MM-DIA-BENCH** is a focused benchmark of **309 highly expressive dialogues** with complete speaker visibility. It is designed to evaluate audio-visual style consistency in vision-conditioned speech synthesis and speech-driven video generation.
 
-| Statistic | MM-DIA | MM-DIA-BENCH |
-|---|---:|---:|
-| Dialogues | 54,700 | 309 |
-| Turns | 449,138 | 1,851 |
-| Duration | 360.26 h | 1.69 h |
-| Average speakers / dialogue | 2.29 | 2.00 |
-| Average duration / dialogue | 23.71 s | 19.69 s |
-| Average turns / dialogue | 8.21 | 5.99 |
-| Speaker visibility | Partial | All |
-
-The annotations cover **8 relationship types** and **12 interaction types**, together with diverse non-verbal acoustic events such as laughter, crying, sighs, gasps, shouting, applause, footsteps, background chatter, and music. Compared with the full dataset, MM-DIA-BENCH is further filtered for visible speakers and stronger emotional intensity and emotion-flow volatility.
+MM-DIA contains **54,700 dialogues**, **449,138 turns**, and **360.26 hours** of multimodal dialogue. MM-DIA-BENCH contains **309 dialogues**, **1,851 turns**, and **1.69 hours**; compared with the full dataset, it is further filtered for visible speakers and stronger emotional intensity and emotion-flow volatility.
 
 <p align="center">
-  <img src="assets/images/details-all.png" width="76%" alt="MM-DIA and MM-DIA-BENCH statistics with non-verbal annotation word cloud">
+  <img src="assets/images/details.png" width="58%" alt="Detailed statistics for MM-DIA and MM-DIA-BENCH">
+  <img src="assets/images/sunburst-relationship-interaction.jpg" width="36%" alt="Sunburst chart of relationship and interaction annotations">
 </p>
 
-<p align="center"><em>Top: corpus statistics for MM-DIA and MM-DIA-BENCH. Bottom: the diversity of non-verbal sound annotations in the dataset.</em></p>
+<p align="center"><em>Left: detailed corpus statistics for MM-DIA and MM-DIA-BENCH. Right: the Relationship × Interaction distribution, covering 8 relationship types and 12 interaction types.</em></p>
 
 ---
 
