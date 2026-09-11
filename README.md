@@ -28,7 +28,7 @@ In the paper, we explore MM-DIA through three representative multimodal dialogue
 
 <p align="center">
   <img src="assets/images/details.png" width="50%" alt="Detailed statistics for MM-DIA and MM-DIA-BENCH">
-  <img src="assets/images/sunburst-relationship-interaction.jpg" width="46%" alt="Sunburst chart of relationship and interaction annotations">
+  <img src="assets/images/sunburst-relationship-interaction.png" width="46%" alt="Sunburst chart of relationship and interaction annotations">
 </p>
 
 ---
