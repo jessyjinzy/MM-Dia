@@ -10,7 +10,7 @@ This is the official repository for the ICLR 2026 paper **“From Natural Alignm
 
 **MM-DIA** is a large-scale multimodal dialogue dataset curated from movies and TV series, containing **54,700 dialogues**, **449,138 speaking turns**, and **360.26 hours** of synchronized text, speech, and visual context. It provides sentence-level multimodal annotations and dialogue-level style descriptions and Affective Triplets.
 
-MM-DIA supports three multimodal dialogue generation tasks:
+In the paper, we explore MM-DIA through three representative multimodal dialogue generation tasks:
 
 1. **Style-Controllable Dialogue Speech Synthesis**
 2. **Vision-Conditioned Dialogue Speech Synthesis**
@@ -27,18 +27,8 @@ MM-DIA supports three multimodal dialogue generation tasks:
 **MM-DIA-BENCH** contains **309 highly expressive dialogues** with complete speaker visibility. It provides a focused benchmark for evaluating cross-modal style consistency in Tasks 2 and 3. Detailed statistics and the Relationship × Interaction distribution are shown below.
 
 <p align="center">
-  <img src="assets/images/details.png" width="58%" alt="Detailed statistics for MM-DIA and MM-DIA-BENCH">
-  <img src="assets/images/sunburst-relationship-interaction.jpg" width="36%" alt="Sunburst chart of relationship and interaction annotations">
-</p>
-
----
-
-## Data Curation and Annotation
-
-The pipeline synchronizes movies and subtitles, extracts dialogue clips, aligns speakers, and generates sentence- and dialogue-level annotations.
-
-<p align="center">
-  <img src="assets/images/pipeline.png" width="100%" alt="Four-stage MM-DIA data curation and annotation pipeline">
+  <img src="assets/images/details.png" width="50%" alt="Detailed statistics for MM-DIA and MM-DIA-BENCH">
+  <img src="assets/images/sunburst-relationship-interaction.jpg" width="46%" alt="Sunburst chart of relationship and interaction annotations">
 </p>
 
 ---
@@ -134,6 +124,10 @@ Corresponding JSON, audio, and video entries refer to the same temporal segment.
 ## Build a Dialogue Dataset
 
 The curation pipeline accepts a movie/TV video and its subtitle file and produces segmented dialogue clips with multimodal annotations.
+
+<p align="center">
+  <img src="assets/images/pipeline.png" width="100%" alt="Four-stage MM-DIA data curation and annotation pipeline">
+</p>
 
 ```bash
 cd mmdia
