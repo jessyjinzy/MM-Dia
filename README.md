@@ -8,56 +8,38 @@ This is the official repository for the ICLR 2026 paper **“From Natural Alignm
 
 ## Overview
 
-**MM-DIA** is a large-scale, in-the-wild multimodal dialogue dataset curated from movies and TV series. It contains **54,700 dialogues**, **449,138 speaking turns**, and **360.26 hours** of synchronized text, speech, and visual context.
-
-Unlike utterance-centered speech datasets, MM-DIA captures the expressive dynamics of a complete conversation at two levels:
-
-- **Sentence-level multimodal annotations:** transcript, speaker identity, aligned speech, video, keyframes, speaker visibility, and non-verbal events such as laughter, pauses, and interruptions.
-- **Dialogue-level interaction annotations:** a free-form style description and a structured **Affective Triplet** consisting of **Relationship**, **Interaction Mode**, and **Emotional Tone**.
+**MM-DIA** is a large-scale multimodal dialogue dataset curated from movies and TV series, containing **54,700 dialogues**, **449,138 speaking turns**, and **360.26 hours** of synchronized text, speech, and visual context. It provides sentence-level multimodal annotations and dialogue-level style descriptions and Affective Triplets.
 
 MM-DIA supports three multimodal dialogue generation tasks:
 
-1. **Style-Controllable Dialogue Speech Synthesis** — explicit control through natural-language style descriptions or Affective Triplets.
-2. **Vision-Conditioned Dialogue Speech Synthesis** — implicit control from speaker appearance, body language, and scene context.
-3. **Speech-Driven Dialogue Video Generation** — generation of expressive dialogue video from conversational speech and transcripts.
+1. **Style-Controllable Dialogue Speech Synthesis**
+2. **Vision-Conditioned Dialogue Speech Synthesis**
+3. **Speech-Driven Dialogue Video Generation**
 
 <p align="center">
   <img src="assets/images/teaser.png" width="100%" alt="MM-DIA multimodal annotations and three dialogue generation tasks">
 </p>
 
-<p align="center"><em>MM-DIA combines sentence-level text, audio, visual, speaker, and non-verbal annotations with dialogue-level interaction modeling. These signals enable explicit style control and implicit cross-modal control.</em></p>
-
 ---
 
 ## MM-DIA and MM-DIA-BENCH
 
-**MM-DIA-BENCH** is a focused benchmark of **309 highly expressive dialogues** with complete speaker visibility. It is designed to evaluate audio-visual style consistency in vision-conditioned speech synthesis and speech-driven video generation.
-
-MM-DIA contains **54,700 dialogues**, **449,138 turns**, and **360.26 hours** of multimodal dialogue. MM-DIA-BENCH contains **309 dialogues**, **1,851 turns**, and **1.69 hours**; compared with the full dataset, it is further filtered for visible speakers and stronger emotional intensity and emotion-flow volatility.
+**MM-DIA-BENCH** contains **309 highly expressive dialogues** with complete speaker visibility. It provides a focused benchmark for evaluating cross-modal style consistency in Tasks 2 and 3. Detailed statistics and the Relationship × Interaction distribution are shown below.
 
 <p align="center">
   <img src="assets/images/details.png" width="58%" alt="Detailed statistics for MM-DIA and MM-DIA-BENCH">
   <img src="assets/images/sunburst-relationship-interaction.jpg" width="36%" alt="Sunburst chart of relationship and interaction annotations">
 </p>
 
-<p align="center"><em>Left: detailed corpus statistics for MM-DIA and MM-DIA-BENCH. Right: the Relationship × Interaction distribution, covering 8 relationship types and 12 interaction types.</em></p>
-
 ---
 
 ## Data Curation and Annotation
 
-MM-DIA is built with a four-stage movie/TV data curation pipeline:
-
-1. **Movie–subtitle synchronization** calibrates subtitle timestamps against ASR output and extracts aligned keyframes.
-2. **Multimodal dialogue extraction** detects scene boundaries and extracts in-scene dialogue clips.
-3. **Sentence-level annotation** aligns each utterance with its speaker using multimodal evidence and a character bank.
-4. **Dialogue-level annotation** produces a natural-language description and the Affective Triplet.
+The pipeline synchronizes movies and subtitles, extracts dialogue clips, aligns speakers, and generates sentence- and dialogue-level annotations.
 
 <p align="center">
   <img src="assets/images/pipeline.png" width="100%" alt="Four-stage MM-DIA data curation and annotation pipeline">
 </p>
-
-<p align="center"><em>The pipeline transforms raw movie data into aligned dialogue clips with sentence-level multimodal annotations and dialogue-level expressiveness annotations.</em></p>
 
 ---
 
@@ -102,6 +84,17 @@ Due to copyright restrictions, the release includes:
 - ✅ **JSON annotations:** transcripts, timestamps, speakers, style descriptions, Affective Triplets, and expressiveness scores.
 - ✅ **DAC-encoded audio:** decode locally to obtain WAV files.
 - ❌ **Original video:** reconstruct clips from legally obtained source media with the provided alignment tool.
+
+### Data needed by task
+
+| Task / Use case | JSON | Audio | Video |
+|---|:---:|:---:|:---:|
+| **Task 1: Style-Controllable Dialogue Speech Synthesis** | ✅ | ✅ | — |
+| **Task 2: Vision-Conditioned Dialogue Speech Synthesis** | ✅ | ✅ | ✅ |
+| **Task 3: Speech-Driven Dialogue Video Generation** | ✅ | ✅ | ✅ |
+| **Dialogue Understanding** | ✅ | ✅ | — |
+
+MM-DIA-BENCH videos are provided for benchmark evaluation. For full-dataset video use, researchers must reconstruct the clips from legally obtained source media.
 
 The dataset is available for non-commercial research and educational use. To request access:
 
