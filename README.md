@@ -1,12 +1,9 @@
-# MM-DIA: A Large-Scale Expressive Multimodal Dialogue Dataset
-
 This is the official repository for the ICLR 2026 paper **“From Natural Alignment to Conditional Controllability in Multimodal Dialogue.”**
 
 [[Paper](https://cloud.tsinghua.edu.cn/f/01f98fa0f9c34983887b/?dl=1)] [[Demo Page](https://mmdiaiclr26.github.io/mmdiaiclr26)]
 
----
 
-## Overview
+## MM-DIA and MM-DIA-BENCH
 
 **MM-DIA** is a large-scale multimodal dialogue dataset curated from movies and TV series, containing **54,700 dialogues**, **449,138 speaking turns**, and **360.26 hours** of synchronized text, speech, and visual context. It provides sentence-level multimodal annotations and dialogue-level style descriptions and Affective Triplets.
 
@@ -20,17 +17,62 @@ In the paper, we explore MM-DIA through three representative multimodal dialogue
   <img src="assets/images/teaser.png" width="100%" alt="MM-DIA multimodal annotations and three dialogue generation tasks">
 </p>
 
----
-
-## MM-DIA and MM-DIA-BENCH
-
-**MM-DIA-BENCH** contains **309 highly expressive dialogues** with complete speaker visibility. It provides a focused benchmark for evaluating cross-modal style consistency in Tasks 2 and 3. Detailed statistics and the Relationship × Interaction distribution are shown below.
+**MM-DIA-BENCH** contains **309 highly expressive dialogues** with complete speaker visibility. It provides a focused benchmark for evaluating cross-modal style consistency.
 
 <p align="center">
   <img src="assets/images/dataset-statistics-and-distribution.png" width="100%" alt="MM-DIA and MM-DIA-BENCH statistics alongside the relationship and interaction sunburst chart">
 </p>
 
----
+## Dataset Access and Format
+
+Due to copyright restrictions, the release includes:
+
+- ✅ **JSON annotations:** transcripts, timestamps, speakers, style descriptions, Affective Triplets, and expressiveness scores.
+- ✅ **DAC-encoded audio:** decode locally to obtain WAV files.
+- ❌ **Original video:** reconstruct clips from legally obtained source media with the provided alignment tool.
+
+MM-DIA-BENCH videos are provided for benchmark evaluation. For full-dataset video use, researchers need to reconstruct the clips from legally obtained source media.
+
+
+### What to Download for Your Research
+
+| Research Area | JSON | Audio | Video | What to Reconstruct | Use Cases |
+|---------------|:----:|:-----:|:-----:|---------------------|-----------|
+| **Spoken Dialogue Generation** | ✅ | ✅ | ❌ | Audio (decode only) | Multi-speaker TTS, conversational speech synthesis, dialogue modeling |
+| **Dialogue Understanding** | ✅ | ✅ | ❌ | Audio (decode only) | Speaker diarization, emotion recognition, turn-taking analysis |
+| **Audio-Visual Speech** | ✅ | ✅ | ✅ | Audio (decode) + Video (extract) | Audio-visual speech generation, lip-sync, talking face synthesis |
+| **Video Generation** | ✅ | ✅ | ✅ | Audio (decode) + Video (extract) | Speech-driven animation, gesture generation, multimodal dialogue video |
+| **Benchmark Evaluation** | ✅ | ✅ | ✅* | Audio + Video | Direct evaluation without video extraction (*MM-DIA-BENCH videos provided) |
+
+The dataset is available for non-commercial research and educational use. To request access:
+
+1. Complete [MM-DIA_EULA.pdf](MM-DIA_EULA.pdf) and apply for access on HuggingFace.
+2. Email the signed form to **jinzeyu23@mails.tsinghua.edu.cn**.
+3. Approved users will receive access to the HuggingFace repository.
+
+The released and reconstructed modalities share the hierarchy `batch → movie/episode → clip`:
+
+```text
+json/<batch>/<movie_or_episode>.json
+audio/<batch>/<movie_or_episode>/<clip>/*.wav
+video/<batch>/<movie_or_episode>/<clip>.mp4
+```
+
+Corresponding JSON, audio, and video entries refer to the same temporal segment. Key JSON fields include `utterances`, `affective_triplet`, `description`, `emotion_intensity`, `emotion_volatility`, and `speaker_visibility`.
+
+## Repository Structure
+
+```text
+.
+├── mmdia/                  # Dialogue extraction and annotation pipeline
+├── higgs_finetune/         # Higgs-Audio-V2 data preparation and fine-tuning
+├── higgs_infer/            # Command-line and Gradio inference
+├── evaluation/             # Automatic and Gemini-based evaluation
+├── utils/                  # Dataset assembly and audio codec utilities
+├── av_align_and_extract.py # Video reconstruction from user-provided sources
+├── QUICKSTART.md
+└── DATASET_RELEASE.md
+```
 
 ## Quick Start
 
@@ -64,61 +106,6 @@ python av_align_and_extract.py \
 
 See [QUICKSTART.md](QUICKSTART.md) for the full setup guide and [DATASET_RELEASE.md](DATASET_RELEASE.md) for reconstruction details and troubleshooting.
 
----
-
-## Dataset Access and Format
-
-Due to copyright restrictions, the release includes:
-
-- ✅ **JSON annotations:** transcripts, timestamps, speakers, style descriptions, Affective Triplets, and expressiveness scores.
-- ✅ **DAC-encoded audio:** decode locally to obtain WAV files.
-- ❌ **Original video:** reconstruct clips from legally obtained source media with the provided alignment tool.
-
-### Data needed by task
-
-| Task / Use case | JSON | Audio | Video |
-|---|:---:|:---:|:---:|
-| **Task 1: Style-Controllable Dialogue Speech Synthesis** | ✅ | ✅ | — |
-| **Task 2: Vision-Conditioned Dialogue Speech Synthesis** | ✅ | ✅ | ✅ |
-| **Task 3: Speech-Driven Dialogue Video Generation** | ✅ | ✅ | ✅ |
-| **Dialogue Understanding** | ✅ | ✅ | — |
-
-MM-DIA-BENCH videos are provided for benchmark evaluation. For full-dataset video use, researchers must reconstruct the clips from legally obtained source media.
-
-The dataset is available for non-commercial research and educational use. To request access:
-
-1. Complete [MM-DIA_EULA.pdf](MM-DIA_EULA.pdf) and apply for access on HuggingFace.
-2. Email the signed form to **jinzeyu23@mails.tsinghua.edu.cn**.
-3. Approved users will receive access to the HuggingFace repository.
-
-The released and reconstructed modalities share the hierarchy `batch → movie/episode → clip`:
-
-```text
-json/<batch>/<movie_or_episode>.json
-audio_encoded/<batch>/<movie_or_episode>/<clip>/*.dac
-audio/<batch>/<movie_or_episode>/<clip>/*.wav
-video/<batch>/<movie_or_episode>/<clip>.mp4
-```
-
-Corresponding JSON, audio, and video entries refer to the same temporal segment. Key JSON fields include `utterances`, `affective_triplet`, `description`, `emotion_intensity`, `emotion_volatility`, and `speaker_visibility`.
-
----
-
-## Repository Structure
-
-```text
-.
-├── mmdia/                  # Dialogue extraction and annotation pipeline
-├── higgs_finetune/         # Higgs-Audio-V2 data preparation and fine-tuning
-├── higgs_infer/            # Command-line and Gradio inference
-├── evaluation/             # Automatic and Gemini-based evaluation
-├── utils/                  # Dataset assembly and audio codec utilities
-├── av_align_and_extract.py # Video reconstruction from user-provided sources
-├── QUICKSTART.md
-└── DATASET_RELEASE.md
-```
-
----
 
 ## Build a Dialogue Dataset
 
@@ -149,8 +136,6 @@ python annotation_main.py \
 ```
 
 The annotation stage requires access to the Gemini API. See `mmdia/src/utils/annotation_prompts.py` for the annotation definitions and prompts.
-
----
 
 ## Training
 
@@ -193,8 +178,6 @@ accelerate launch --config_file accl_config.yaml train_higgs.py \
 
 Recommended classifier-free guidance settings at inference are `--pad_left --guidance_scale 2.0 --cfg_text`.
 
----
-
 ## Inference
 
 ```bash
@@ -221,8 +204,6 @@ bash evaluate.sh
 
 See the scripts in [evaluation/](evaluation/) for metric-specific usage.
 
----
-
 ## Citation
 
 ```bibtex
@@ -233,8 +214,6 @@ See the scripts in [evaluation/](evaluation/) for metric-specific usage.
   year      = {2026}
 }
 ```
-
----
 
 ## License
 
