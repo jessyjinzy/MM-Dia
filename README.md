@@ -27,8 +27,7 @@ In the paper, we explore MM-DIA through three representative multimodal dialogue
 **MM-DIA-BENCH** contains **309 highly expressive dialogues** with complete speaker visibility. It provides a focused benchmark for evaluating cross-modal style consistency in Tasks 2 and 3. Detailed statistics and the Relationship × Interaction distribution are shown below.
 
 <p align="center">
-  <img src="assets/images/details.png" width="50%" alt="Detailed statistics for MM-DIA and MM-DIA-BENCH">
-  <img src="assets/images/sunburst-relationship-interaction.png" width="46%" alt="Sunburst chart of relationship and interaction annotations">
+  <img src="assets/images/dataset-statistics-and-distribution.png" width="100%" alt="MM-DIA and MM-DIA-BENCH statistics alongside the relationship and interaction sunburst chart">
 </p>
 
 ---
