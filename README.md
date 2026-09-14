@@ -41,15 +41,7 @@ MM-DIA and MM-DIA-BENCH are released separately. **MM-DIA** provides annotations
 | **Video Generation** | Speech-driven dialogue video | MM-DIA JSON + DAC audio (decode) + source video (reconstruct) |
 | **Benchmark Evaluation** | Cross-modal style consistency | MM-DIA-BENCH JSON + WAV + MP4 |
 
-**Decode** ([`utils/audio_codec_utils.py`](utils/audio_codec_utils.py)) converts the released DAC audio to WAV; **reconstruct** ([`av_align_and_extract.py`](av_align_and_extract.py)) extracts clips from legally obtained source video.
-
-The dataset is available for non-commercial research and educational use. To request access:
-
-1. Complete [MM-DIA_EULA.pdf](MM-DIA_EULA.pdf) and apply for access on HuggingFace.
-2. Email the signed form to **jinzeyu23@mails.tsinghua.edu.cn**.
-3. Approved users will receive access to the HuggingFace repository.
-
-The released and reconstructed modalities share the hierarchy `batch → movie/episode → clip`:
+**Decode** ([`utils/audio_codec_utils.py`](utils/audio_codec_utils.py)) converts the released DAC audio to WAV; **reconstruct** ([`av_align_and_extract.py`](av_align_and_extract.py)) extracts clips from legally obtained source video. The released and reconstructed modalities share the hierarchy `batch → movie/episode → clip`:
 
 ```text
 json/<batch>/<movie_or_episode>.json
@@ -57,7 +49,11 @@ audio/<batch>/<movie_or_episode>/<clip>/*.wav
 video/<batch>/<movie_or_episode>/<clip>.mp4
 ```
 
-Corresponding JSON, audio, and video entries refer to the same temporal segment. Key JSON fields include `utterances`, `affective_triplet`, `description`, `emotion_intensity`, `emotion_volatility`, and `speaker_visibility`.
+The dataset is available for non-commercial research and educational use. To request access:
+
+1. Complete [MM-DIA_EULA.pdf](MM-DIA_EULA.pdf) and apply for access on HuggingFace.
+2. Email the signed form to **jinzeyu23@mails.tsinghua.edu.cn**.
+3. Approved users will receive access to the HuggingFace repository.
 
 ## Repository Structure
 
