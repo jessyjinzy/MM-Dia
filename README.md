@@ -31,24 +31,17 @@ In the paper, we explore MM-DIA through three representative multimodal dialogue
 
 ## Dataset Access and Format
 
-Due to copyright restrictions, the release includes:
+MM-DIA and MM-DIA-BENCH are released separately. **MM-DIA** provides annotations and DAC-encoded audio for the full dataset, which can be decoded locally. For full-dataset video use, researchers need to reconstruct the clips from legally obtained source media, while we also provide pipeline to extract and annotate dialogue clips from users' own new video and subtitle sources. **MM-DIA-BENCH** provides ready-to-use JSON annotations, WAV audio, and MP4 video for direct evaluation.
 
-- ✅ **JSON annotations:** transcripts, timestamps, speakers, style descriptions, Affective Triplets, and expressiveness scores.
-- ✅ **DAC-encoded audio:** decode locally to obtain WAV files.
-- ❌ **Original video:** reconstruct clips from legally obtained source media with the provided alignment tool.
+| Research Area | Use Cases | What to Download |
+|---------------|-----------|------------------|
+| **Spoken Dialogue Generation** | TTS, dialogue modeling | MM-DIA JSON + DAC audio (decode) |
+| **Dialogue Understanding** | Diarization, emotion, turn-taking | MM-DIA JSON; DAC audio if needed (decode) |
+| **Audio-Visual Speech** | Lip-sync, talking-face generation | MM-DIA JSON + DAC audio (decode) + source video (reconstruct) |
+| **Video Generation** | Speech-driven dialogue video | MM-DIA JSON + DAC audio (decode) + source video (reconstruct) |
+| **Benchmark Evaluation** | Cross-modal style consistency | MM-DIA-BENCH JSON + WAV + MP4 |
 
-MM-DIA-BENCH videos are provided for benchmark evaluation. For full-dataset video use, researchers need to reconstruct the clips from legally obtained source media.
-
-
-### What to Download for Your Research
-
-| Research Area | JSON | Audio | Video | What to Reconstruct | Use Cases |
-|---------------|:----:|:-----:|:-----:|---------------------|-----------|
-| **Spoken Dialogue Generation** | ✅ | ✅ | ❌ | Audio (decode only) | Multi-speaker TTS, conversational speech synthesis, dialogue modeling |
-| **Dialogue Understanding** | ✅ | ✅ | ❌ | Audio (decode only) | Speaker diarization, emotion recognition, turn-taking analysis |
-| **Audio-Visual Speech** | ✅ | ✅ | ✅ | Audio (decode) + Video (extract) | Audio-visual speech generation, lip-sync, talking face synthesis |
-| **Video Generation** | ✅ | ✅ | ✅ | Audio (decode) + Video (extract) | Speech-driven animation, gesture generation, multimodal dialogue video |
-| **Benchmark Evaluation** | ✅ | ✅ | ✅* | Audio + Video | Direct evaluation without video extraction (*MM-DIA-BENCH videos provided) |
+**Decode** ([`utils/audio_codec_utils.py`](utils/audio_codec_utils.py)) converts the released DAC audio to WAV; **reconstruct** ([`av_align_and_extract.py`](av_align_and_extract.py)) extracts clips from legally obtained source video.
 
 The dataset is available for non-commercial research and educational use. To request access:
 
